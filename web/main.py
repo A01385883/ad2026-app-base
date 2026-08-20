@@ -5,11 +5,11 @@ from sqlalchemy import create_engine, text
 app = FastAPI()
 
 @app.get("/")
-async def root():
+def root():
     return {"message": f"Hello World!"}
 
 @app.get("/name")
-async def name():
+def name():
     user_name = os.getenv("USER_NAME", "World")
     return {"message": f"Hello {user_name}"}
 
